@@ -1,4 +1,7 @@
 # FINAL-CASE-STUDY
+
+MENDOZA, LOUIS ADRIAN F.
+
 Final Case Study: Network Automation
 
 In this case study, I’m going to create a network topology for a school using GNS3. I would also be going to use Ansible 
