@@ -16,7 +16,7 @@ the management.
 </ul>
 <br>
 <br>
-#### Check the documentation and the video simulation to learn more about the case study
+# Check the documentation and the video simulation to learn more about the case study
 <br>
-#### Video Simulation Link (Gdrive):
+# Video Simulation Link (Gdrive):
 https://drive.google.com/drive/folders/1Q6EAAijgNYr2v6kIIt3Y6dsdigCCIy4S?usp=sharing
