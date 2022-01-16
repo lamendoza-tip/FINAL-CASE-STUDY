@@ -14,5 +14,8 @@ the management.
   <li>Configuration of OSPF in the routers</li>
   <li>Application of Extended ACL for the network.</li>
 </ul>
-
-##### Check the documentation and the video simulation to learn more about the case study
+<br>
+<br>
+#### ## Check the documentation and the video simulation to learn more about the case study
+#### ## Video Simulation Link (Gdrive)
+https://drive.google.com/drive/folders/1Q6EAAijgNYr2v6kIIt3Y6dsdigCCIy4S?usp=sharing
