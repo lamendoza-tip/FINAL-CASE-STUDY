@@ -1,0 +1,4 @@
+# Enter the hosts or devices for Ansible playbooks
+R1 ansible_user=cisco ansible_password=cisco123 ansible_host=192.168.1.1 ansible_network_os=ios
+R2 ansible_user=cisco ansible_password=cisco123 ansible_host=192.168.10.1 ansible_network_os=ios
+R3 ansible_user=cisco ansible_password=cisco123 ansible_host=192.168.20.1 ansible_network_os=ios

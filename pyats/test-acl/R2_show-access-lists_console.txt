@@ -1,0 +1,6 @@
++++ R2 with via 'cli': executing command 'show access-lists' +++
+show access-lists
+Extended IP access list 101
+    10 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255 (30 matches)
+    20 permit ip any any (6 matches)
+R2#

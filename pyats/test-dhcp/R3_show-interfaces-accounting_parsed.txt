@@ -1,0 +1,98 @@
+{
+  "FastEthernet0/0": {
+    "accounting": {
+      "arp": {
+        "chars_in": 256,
+        "chars_out": 240,
+        "pkts_in": 4,
+        "pkts_out": 4
+      },
+      "cdp": {
+        "chars_in": 0,
+        "chars_out": 13132,
+        "pkts_in": 0,
+        "pkts_out": 36
+      },
+      "dec mop": {
+        "chars_in": 0,
+        "chars_out": 231,
+        "pkts_in": 0,
+        "pkts_out": 3
+      },
+      "ip": {
+        "chars_in": 2114,
+        "chars_out": 20668,
+        "pkts_in": 9,
+        "pkts_out": 218
+      },
+      "other": {
+        "chars_in": 0,
+        "chars_out": 12000,
+        "pkts_in": 0,
+        "pkts_out": 200
+      }
+    }
+  },
+  "FastEthernet0/1": {
+    "accounting": {
+      "arp": {
+        "chars_in": 192,
+        "chars_out": 180,
+        "pkts_in": 3,
+        "pkts_out": 3
+      },
+      "cdp": {
+        "chars_in": 0,
+        "chars_out": 13141,
+        "pkts_in": 0,
+        "pkts_out": 36
+      },
+      "dec mop": {
+        "chars_in": 0,
+        "chars_out": 231,
+        "pkts_in": 0,
+        "pkts_out": 3
+      },
+      "ip": {
+        "chars_in": 1218,
+        "chars_out": 7686,
+        "pkts_in": 3,
+        "pkts_out": 77
+      },
+      "other": {
+        "chars_in": 0,
+        "chars_out": 12000,
+        "pkts_in": 0,
+        "pkts_out": 200
+      }
+    }
+  },
+  "Serial2/0": {
+    "accounting": {
+      "cdp": {
+        "chars_in": 11725,
+        "chars_out": 12102,
+        "pkts_in": 35,
+        "pkts_out": 36
+      },
+      "ip": {
+        "chars_in": 94556,
+        "chars_out": 179047,
+        "pkts_in": 1609,
+        "pkts_out": 1613
+      },
+      "other": {
+        "chars_in": 0,
+        "chars_out": 4824,
+        "pkts_in": 0,
+        "pkts_out": 201
+      }
+    }
+  },
+  "_exclude": [
+    "pkts_in",
+    "pkts_out",
+    "chars_in",
+    "chars_out"
+  ]
+}

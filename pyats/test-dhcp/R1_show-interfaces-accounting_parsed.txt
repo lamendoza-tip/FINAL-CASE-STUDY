@@ -1,0 +1,86 @@
+{
+  "FastEthernet0/0": {
+    "accounting": {
+      "arp": {
+        "chars_in": 15976,
+        "chars_out": 360,
+        "pkts_in": 266,
+        "pkts_out": 6
+      },
+      "cdp": {
+        "chars_in": 0,
+        "chars_out": 13860,
+        "pkts_in": 0,
+        "pkts_out": 38
+      },
+      "dec mop": {
+        "chars_in": 0,
+        "chars_out": 231,
+        "pkts_in": 0,
+        "pkts_out": 3
+      },
+      "ip": {
+        "chars_in": 269079,
+        "chars_out": 487040,
+        "pkts_in": 3687,
+        "pkts_out": 3896
+      },
+      "other": {
+        "chars_in": 0,
+        "chars_out": 12900,
+        "pkts_in": 0,
+        "pkts_out": 215
+      }
+    }
+  },
+  "Serial2/0": {
+    "accounting": {
+      "cdp": {
+        "chars_in": 11055,
+        "chars_out": 12793,
+        "pkts_in": 33,
+        "pkts_out": 39
+      },
+      "ip": {
+        "chars_in": 166208,
+        "chars_out": 87572,
+        "pkts_in": 1501,
+        "pkts_out": 1511
+      },
+      "other": {
+        "chars_in": 0,
+        "chars_out": 5184,
+        "pkts_in": 0,
+        "pkts_out": 216
+      }
+    }
+  },
+  "Serial2/1": {
+    "accounting": {
+      "cdp": {
+        "chars_in": 11734,
+        "chars_out": 13468,
+        "pkts_in": 35,
+        "pkts_out": 41
+      },
+      "ip": {
+        "chars_in": 176191,
+        "chars_out": 93132,
+        "pkts_in": 1572,
+        "pkts_out": 1587
+      },
+      "other": {
+        "chars_in": 0,
+        "chars_out": 5184,
+        "pkts_in": 0,
+        "pkts_out": 216
+      }
+    }
+  },
+  "_exclude": [
+    "pkts_in",
+    "pkts_out",
+    "chars_in",
+    "chars_out"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "FastEthernet0/0": {
+    "accounting": {
+      "arp": {
+        "chars_in": 512,
+        "chars_out": 360,
+        "pkts_in": 8,
+        "pkts_out": 6
+      },
+      "cdp": {
+        "chars_in": 0,
+        "chars_out": 13477,
+        "pkts_in": 0,
+        "pkts_out": 37
+      },
+      "dec mop": {
+        "chars_in": 0,
+        "chars_out": 231,
+        "pkts_in": 0,
+        "pkts_out": 3
+      },
+      "ip": {
+        "chars_in": 3416,
+        "chars_out": 22282,
+        "pkts_in": 16,
+        "pkts_out": 233
+      },
+      "other": {
+        "chars_in": 0,
+        "chars_out": 12420,
+        "pkts_in": 0,
+        "pkts_out": 207
+      }
+    }
+  },
+  "Serial2/0": {
+    "accounting": {
+      "cdp": {
+        "chars_in": 12060,
+        "chars_out": 12078,
+        "pkts_in": 36,
+        "pkts_out": 36
+      },
+      "ip": {
+        "chars_in": 99396,
+        "chars_out": 187878,
+        "pkts_in": 1669,
+        "pkts_out": 1681
+      },
+      "other": {
+        "chars_in": 0,
+        "chars_out": 4992,
+        "pkts_in": 0,
+        "pkts_out": 208
+      }
+    }
+  },
+  "_exclude": [
+    "pkts_in",
+    "pkts_out",
+    "chars_in",
+    "chars_out"
+  ]
+}

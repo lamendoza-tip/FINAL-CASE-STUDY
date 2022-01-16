@@ -1,0 +1,4 @@
++++ R1 with via 'cli': executing command 'show access-lists' +++
+show access-lists
+
+R1#

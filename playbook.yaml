@@ -1,0 +1,195 @@
+#====================================================================================
+#===================================--NETWORK-TOPIC-#1--=============================
+#====================================================================================
+
+---
+- name: Network Topic 1 (DHCP server for management network)(R1)
+  become_method: enable
+  hosts: R1
+  gather_facts: false
+  connection: network_cli
+ 
+  tasks:
+
+   - name: Create DHCP pool DHCP_management
+     ios_config:
+       lines:
+         - ip dhcp pool DHCP_management
+
+   - name: Configure DHCP_management
+     ios_config:
+       lines:
+         - network 192.168.1.0 255.255.255.0
+         - default-router 192.168.1.1
+         - dns-server 192.168.1.10
+       parents: ip dhcp pool DHCP_management
+
+   - name: Exclude Address (192.168.1.1 - 1.10)
+     ios_config:
+       lines:
+         - ip dhcp excluded-address 192.168.1.1 192.168.1.10
+
+
+- name: Network Topic 1 (DHCP server for computer lab network)(R2)
+  become_method: enable
+  hosts: R2
+  gather_facts: false
+  connection: network_cli
+ 
+  tasks:
+
+   - name: Create DHCP pool DHCP_students
+     ios_config:
+       lines:
+         - ip dhcp pool DHCP_students
+
+   - name: Configure DHCP_students
+     ios_config:
+       lines:
+         - network 192.168.10.0 255.255.255.0
+         - default-router 192.168.10.1
+         - dns-server 192.168.10.10
+       parents: ip dhcp pool DHCP_students
+
+   - name: Exclude Address (192.168.10.1 - 10.10)
+     ios_config:
+       lines:
+         - ip dhcp excluded-address 192.168.10.1 192.168.10.10
+
+
+- name: Network Topic 1 (DHCP server for school main office network)(R3)
+  become_method: enable
+  hosts: R3
+  gather_facts: false
+  connection: network_cli
+ 
+  tasks:
+
+   - name: Create 2 DHCP pool (DHCP_teachers & DHCP_schooladmins)
+     ios_config:
+       lines:
+         - ip dhcp pool DHCP_teachers
+         - ip dhcp pool DHCP_schooladmins
+
+   - name: Configure DHCP_schooladmins
+     ios_config:
+       lines:
+         - network 192.168.20.0 255.255.255.0
+         - default-router 192.168.20.1
+         - dns-server 192.168.20.10
+       parents: ip dhcp pool DHCP_schooladmins
+
+   - name: Configure DHCP_teachers
+     ios_config:
+       lines:
+         - network 192.168.21.0 255.255.255.0
+         - default-router 192.168.21.1
+         - dns-server 192.168.21.10
+       parents: ip dhcp pool DHCP_teachers
+
+   - name: Exclude Address (192.168.20.1 - 20.10) & (192.168.21.1 - 21.10)
+     ios_config:
+       lines:
+         - ip dhcp excluded-address 192.168.20.1 192.168.20.10
+         - ip dhcp excluded-address 192.168.21.1 192.168.21.10
+
+
+#====================================================================================
+#===================================--NETWORK-TOPIC-#2--=============================
+#====================================================================================
+
+- name: Network Topic 2 (Configuration of OSPF)(R1)
+  become_method: enable
+  hosts: R1
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: Create ospf 10 (R1)
+     ios_config:
+       lines:
+         - router ospf 10
+
+   - name: Configure router ospf 10 on R1
+     ios_config:
+       lines:
+         - router-id 1.1.1.1
+         - log-adjacency-changes
+         - network 10.0.0.0 0.0.0.3 area 0
+         - network 10.0.0.4 0.0.0.3 area 0
+         - network 192.168.1.0 0.0.0.255 area 0
+         - default-information originate
+       parents: router ospf 10
+
+
+- name: Network Topic 2 (Configuration of OSPF)(R2)
+  become_method: enable
+  hosts: R2
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: Create ospf 10 (R2)
+     ios_config:
+       lines:
+         - router ospf 10
+
+   - name: Configure router ospf 10 on R2
+     ios_config:
+       lines:
+         - router-id 2.2.2.2
+         - log-adjacency-changes
+         - network 10.0.0.0 0.0.0.3 area 0
+         - network 192.168.10.0 0.0.0.255 area 0
+       parents: router ospf 10
+
+
+- name: Network Topic 2 (Configuration of OSPF)(R3)
+  become_method: enable
+  hosts: R3
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: Create ospf 10 (R3)
+     ios_config:
+       lines:
+         - router ospf 10
+
+   - name: Configure router ospf 10 on R3
+     ios_config:
+       lines:
+         - router-id 3.3.3.3
+         - log-adjacency-changes
+         - network 10.0.0.4 0.0.0.3 area 0
+         - network 192.168.20.0 0.0.0.255 area 0
+         - network 192.168.21.0 0.0.0.255 area 0
+       parents: router ospf 10
+
+
+#====================================================================================
+#===================================--NETWORK-TOPIC-#3--=============================
+#====================================================================================
+
+- name: Network Topic 3 (Extended ACL configuration)
+  become_method: enable
+  hosts: R2
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+   - name: Configure Extended ACL on R2
+     ios_config:
+       lines:
+         - access-list 101 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+         - access-list 101 permit ip any any
+
+   - name: Add ACL 101 inbound on int f0/0
+     ios_config:
+       lines:
+         - ip access-group 101 in
+       parents: interface FastEthernet0/0

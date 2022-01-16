@@ -1,0 +1,28 @@
++++ R1 with via 'cli': executing command 'show interfaces accounting' +++
+show interfaces accounting
+FastEthernet0/0 
+                Protocol    Pkts In   Chars In   Pkts Out  Chars Out
+                   Other          0          0        215      12900
+                      IP       3687     269079       3896     487040
+                 DEC MOP          0          0          3        231
+                     ARP        266      15976          6        360
+                     CDP          0          0         38      13860
+Interface FastEthernet0/1 is disabled
+
+Interface FastEthernet1/0 is disabled
+
+Serial2/0 
+                Protocol    Pkts In   Chars In   Pkts Out  Chars Out
+                   Other          0          0        216       5184
+                      IP       1501     166208       1511      87572
+                     CDP         33      11055         39      12793
+Serial2/1 
+                Protocol    Pkts In   Chars In   Pkts Out  Chars Out
+                   Other          0          0        216       5184
+                      IP       1572     176191       1587      93132
+                     CDP         35      11734         41      13468
+Interface Serial2/2 is disabled
+
+Interface Serial2/3 is disabled
+
+R1#
